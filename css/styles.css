@@ -1,0 +1,95 @@
+/*
+//Colours
+Orange #F18119
+Blackish #404040
+White #fff
+
+//Font
+Source Sans
+
+//Font Sizes
+Small
+h1 2.25rem
+h2 1.3125rem
+body 1rem
+small 0.625rem
+
+Large
+h1 3.5rem
+h2 1.75rem
+body 1.25rem
+small 0.625rem
+
+Font Weights
+bold - 900
+regular - 400
+
+Buttons
+Must have a hover and focus state
+Must have 2 classes a generic and a modifier
+*/
+
+:root{
+    --orange: #F18119;
+    --black: #404040;
+    --white: #fff;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.container{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+
+header.hero{
+    border: 1px solid black;
+    text-align: center;
+    background-image: url(../images/dark-ribs.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    color: var(--orange)
+}
+
+.hero-banner{
+    border-top: coral 3px solid;
+    margin: 0 auto;
+    width: 50%;
+    text-transform: uppercase;
+}
+
+.hero-heading{
+    color: var(--white);
+}
+
+.hero-subheading{
+    text-transform: uppercase;
+}
+
+section{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.form-text p{
+    margin: auto 20px;
+    padding-bottom: 15px;
+}
+
+form input{
+    display: block;
+    margin-bottom: 250px;
+    margin: 5px auto;
+    text-align: center;
+}
