@@ -10,11 +10,17 @@
     --gradient: linear-gradient(to right, #FFA51D,#FF713B);
 }
 
+/*  font-family: 'Source Sans Pro', sans-serif;  */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif; 
     font-size: 1rem;
-    color: var(--black);
+    color: #404040;
     text-align: center;
 }
 
@@ -27,11 +33,11 @@ h1 {
     font-size: 2.25rem;
     font-weight: 300;
     color: #fff;
-    margin: 2em 0;
+    margin: 0;
 }
 
 h1 + p {
-    color: var(--orange);
+    color: #F18119;
     font-weight: 900;
     font-size: 1.3125rem;
     text-transform: uppercase;
@@ -45,14 +51,14 @@ h2 {
 
 h2 + p {
     font-weight: 900;
-    color: var(--orange);
-    text-transform: uppercase;
+    color: #F18119;
     margin-top: 0;
+    text-transform: uppercase;
 }
 
 .top-text {
     font-size: 0.625rem;
-    color: var(--orange);
+    color: #F18119;
     font-weight: 900;
     text-transform: uppercase;
     order: -1;
@@ -72,43 +78,78 @@ strong { font-weight: 900; }
    
 .intro {
     background-image: url(../images/dark-ribs.jpg);
-    background-color: var(--black);
+    background-size: cover;
+    background-color: #404040;
+    background-position: center;
     padding: 0 .5em 2em;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
 }
 
-.main-content{
+
+/* =================
+   main-content section 
+   ================= */
+   
+.main-content {
     padding: 2em 1em;
 }
 
+.intro > *,
+.main-content > * {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input, button{
+    display: block;
+    margin-bottom: 0.75em;
+    text-align: center;
+    width: 300px;
+    padding: 10px 25px;
+    border: none;
+}
+
+form input{
+    border: 1px solid var(--black);
+}
+
+form button{
+    margin: 0 auto;
+}
+
+
 /* =================
-   Media Queries 
+   media queries 
    ================= */
-
-   @media (min-width: 500px){
-       body{
-           display: flex;
-           font-size: 1.25rem;       
-           height: 100vh;
-        }
-       h1{
-           font-size: 3.5rem;
-       }
-       h1+p, 
-       h2{
-           font-size: 1.75rem;
-       }
-
-       .main-content{
-           display: flex;
-           width: 50%;
-           flex-direction: column;
-           justify-content: center;
-       }
-       .intro{
-           width: 50%;
-           display: flex;
-           flex-direction: column;
-       }
-   }
+   
+@media (min-width: 500px) {
+    body {
+        font-size: 1.125rem;
+        display: flex;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    h2,
+    h1 + p {
+        font-size: 1.75rem;
+    }
+    
+    .intro,
+    .main-content {
+        width: 50%;
+        min-height: 100vh;
+    }
+    
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
