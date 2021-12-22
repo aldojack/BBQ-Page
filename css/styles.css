@@ -8,6 +8,8 @@
     --gradient1: #FF713B;
     --gradient2: #FFA51D;
     --gradient: linear-gradient(to right, #FFA51D,#FF713B);
+    --inverse-gradient: linear-gradient(to left, #FFA51D,#FF713B);
+
 }
 
 /*  font-family: 'Source Sans Pro', sans-serif;  */
@@ -58,10 +60,14 @@ h2 + p {
 
 .top-text {
     font-size: 0.625rem;
+    padding-top: 2px;
     color: #F18119;
     font-weight: 900;
     text-transform: uppercase;
     order: -1;
+    border-top: solid 5px var(--gradient1);
+    border-image: var(--gradient) 1;
+    margin-top: 0;
 }
 
 .fine-print {
@@ -80,6 +86,7 @@ strong { font-weight: 900; }
     background-image: url(../images/dark-ribs.jpg);
     background-size: cover;
     background-color: #404040;
+    background-blend-mode: multiply;
     background-position: center;
     padding: 0 .5em 2em;
     display: flex;
@@ -104,23 +111,57 @@ strong { font-weight: 900; }
     margin-right: auto;
 }
 
-form input, button{
-    display: block;
+input, button{
+    text-align: inherit;
+    /* font-family: inherit; */
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin: 0 auto;
     margin-bottom: 0.75em;
-    text-align: center;
-    width: 300px;
-    padding: 10px 25px;
-    border: none;
 }
 
 form input{
     border: 1px solid var(--black);
+    transform: scale(1);
+    transition: transform 250ms;
 }
 
-form button{
-    margin: 0 auto;
+input:focus{
+    transform: scale(1.05);
 }
 
+.btn{
+    display: inline-block;
+    cursor: pointer;
+    padding: 1em 2em;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    font-weight: 900;
+}
+
+.btn-primary{
+    color: var(--white);
+    background-image: var(--gradient);
+    transform: scale(1);
+    transition: color 250ms;
+    transition: transform 250ms;
+
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+    color: var(--black);
+    transform: scale(1.05);
+
+}
+
+.email-collector{
+    width: 80%;
+    max-width: 300px;
+}
 
 /* =================
    media queries 
